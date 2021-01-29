@@ -1,0 +1,14 @@
+<div class="order-panel">
+    <div>
+        <app-order-panel-header></app-order-panel-header>
+    </div>
+    <div class="order-list">
+        <app-order-list *ngIf="orderItemCount > 0; else emptylist"></app-order-list>
+        <ng-template #emptylist>
+            <app-order-list-empty></app-order-list-empty>
+        </ng-template>
+    </div>
+    <div>
+        <app-order-panel-footer></app-order-panel-footer>
+    </div>
+</div>
