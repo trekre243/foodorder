@@ -7,8 +7,13 @@ export class Menu {
 
     constructor(
         /* An array of the categories containing menu items */
-        public categories: MenuCategory[]
+        public categories: MenuCategory[] = []
         
     ) {}
+
+    /* Add a category to the menu */
+    addMenuCategory(category: MenuCategory) {
+        this.categories.push(category);
+    }
 
 }

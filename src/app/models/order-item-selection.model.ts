@@ -4,7 +4,7 @@ import { Option } from './option.model';
  * An class representing a single menu item selection
  * (Used for exclusive or multiple selections)
  */
-export class SelectedMenuItemSelection {
+export class OrderItemSelection {
 
     constructor(
 
@@ -15,4 +15,9 @@ export class SelectedMenuItemSelection {
         public options: Option[] = []
 
     ) {}
+
+    /* Add an option to the selection */
+    addOption(option: Option) {
+        this.options.push(option);
+    }
 }

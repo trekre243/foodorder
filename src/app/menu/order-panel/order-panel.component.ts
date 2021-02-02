@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPanelComponent implements OnInit {
 
-  orderItemCount = 1;
-
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

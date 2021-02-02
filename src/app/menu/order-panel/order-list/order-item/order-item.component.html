@@ -1,0 +1,15 @@
+<div class="upper-item-container">
+    <p class="mat-subheading-1 item-name">{{ orderItem.itemName }}</p>
+    <p class="mat-subheading-2">{{ orderItem.getTotalPrice() | currency }}</p>
+</div>
+<div class="lower-item-container">
+    <div class="selection-area">
+        <p *ngFor="let selection of orderItem.selections" >
+            <em><strong>{{ selection.selectionLabel | titlecase }}: </strong>{{ selection.options | ListSelectionOptions }}</em>
+        </p>
+    </div>
+    <div>
+        <a class="item-link" href="#">Edit</a>
+        <a class="item-link" href="javascipt: void(0);" (click)="removeItem()">Delete</a>
+    </div>
+</div>

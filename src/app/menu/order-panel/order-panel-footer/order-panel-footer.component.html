@@ -1,11 +1,11 @@
-<p class="total-price"><strong>Total Price:</strong> $12.39</p>
+<p class="mat-subheading-2 total-price"><strong>Total Price:</strong> {{ orderPrice | currency }}</p>
 <mat-divider></mat-divider>
 <div class="footer-container">
-    <button mat-raised-button color="accent">
+    <button mat-raised-button color="accent" (click)="clearOrder()">
         <mat-icon>clear</mat-icon>
         Clear
     </button>
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary" (click)="checkout()">
         Checkout
         <mat-icon>arrow_forward</mat-icon>
     </button>

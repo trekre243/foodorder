@@ -11,9 +11,6 @@ export class MenuItemSelection {
         /* Label for category selection (eg. Toppings) */
         public selectionLabel: string,
 
-        /* The minumum number of allowed selections */
-        public minAllowed: number,
-
         /* The maximum number of allowed selections. null means no max */
         public maxAllowed: number,
 
@@ -22,4 +19,9 @@ export class MenuItemSelection {
         public options: Option[] = []
 
     ) {}
+    
+    /* Add an option to the selection */
+    addOption(option: Option) {
+        this.options.push(option);
+    }
 }

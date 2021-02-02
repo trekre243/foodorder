@@ -1,1 +1,12 @@
-<p>Order List</p>
+<div class="order-list-container">
+    <div *ngIf="orderItems.length != 0; else listempty">
+        <app-order-item
+            *ngFor="let item of orderItems; let i = index"
+            [orderItem]="item"
+            [itemIndex]="i">
+        </app-order-item>
+    </div>
+    <ng-template #listempty>
+        <app-order-list-empty></app-order-list-empty>
+    </ng-template>
+</div>

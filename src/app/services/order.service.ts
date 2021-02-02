@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
-import { Order } from '../models/order.model';
-import { SelectedMenuItem } from './../models/selected-menu-item.model';
+import { Order } from '@models/order.model';
+import { OrderItem } from '@models/order-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class OrderService {
   private _order: Order = new Order();
 
   /* Sends a copy of updated items */
-  itemsChanged = new Subject<SelectedMenuItem[]>();
+  itemsChanged = new Subject<OrderItem[]>();
 
   /* Sends the updated Price */
   priceChanged = new Subject<number>();
@@ -25,9 +25,14 @@ export class OrderService {
   constructor() { }
 
   /* Add an item to the order */
-  addItemToOrder(item: SelectedMenuItem) {
+  addItemToOrder(item: OrderItem) {
     this._order.addItem(item);
     this.updateObservables();
+  }
+
+  /* Retrieve a copy of the items in the order */
+  getItems() {
+    return this._order.getItems();
   }
 
   /* Remove an item from the order by index */
@@ -40,6 +45,12 @@ export class OrderService {
   clearOrder() {
     this._order.clearOrder();
     this.updateObservables();
+  }
+
+  /* Place the current order */
+  //TODO: Actually Implement
+  placeOrder() {
+    console.log('Place order called');
   }
 
   /* Updates observables to changes */

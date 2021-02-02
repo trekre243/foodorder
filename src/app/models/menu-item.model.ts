@@ -18,4 +18,10 @@ export class MenuItem {
         public selections: MenuItemSelection[] = []
 
     ) {}
+
+    /* Add a selection to the menu item */
+    addSelection(selection: MenuItemSelection) {
+        this.selections.push(selection);
+    }
+
 }

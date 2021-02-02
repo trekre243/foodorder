@@ -1,0 +1,23 @@
+.upper-item-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower-item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.selection-area {
+    padding: 0 10px 0 5px;
+}
+
+.item-link {
+    padding: 0 5px;
+}

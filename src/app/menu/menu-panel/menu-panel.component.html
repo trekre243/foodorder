@@ -1,1 +1,6 @@
-<p>menu-panel works!</p>
+<div class="menu-container">
+    <h1 class="mat-display-1 menu-title">Menu</h1>
+    <div *ngFor="let category of menu.categories">
+        <p>{{ category.categoryName }}</p>
+    </div>
+</div>

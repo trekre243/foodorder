@@ -1,5 +1,4 @@
-import { SelectedMenuItem } from './selected-menu-item.model';
-import { MenuItem } from './menu-item.model';
+import { OrderItem } from './order-item.model';
 
 /**
  * Class representing a customer's order
@@ -7,7 +6,7 @@ import { MenuItem } from './menu-item.model';
 export class Order {
 
     /* Array containing the items of the order */
-    private _orderItems: SelectedMenuItem[] = [];
+    private _orderItems: OrderItem[] = [];
 
     /* The total price of the order */
     private _price = 0;
@@ -25,7 +24,7 @@ export class Order {
     }
 
     /* Add a menu item to the order */
-    addItem(item: SelectedMenuItem) {
+    addItem(item: OrderItem) {
         this._orderItems.push(item);
 
         this.recalculatePrice();
@@ -55,12 +54,7 @@ export class Order {
         let price = 0;
 
         for(const orderItem of this._orderItems) {
-            price += orderItem.price;
-            for(const selection of orderItem.selections) {
-                for(const option of selection.options) {
-                    price += option.priceDifference;
-                }
-            }
+            price += orderItem.getTotalPrice();
         }
 
         this._price = price;
